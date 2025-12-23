@@ -50,13 +50,13 @@ pipeline {
                 scannerHome = tool "${SONARSCANNER}"
             }
             steps {
-                withSonarQubeEnv("${SONARSERVER}"){
+                withSonarQubeEnv("${SONARSERVER}") {
                     sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                     -Dsonar.projectName=vprofile \
                     -Dsonar.projectVersion=1.0 \
                     -Dsonar.sources=src/ \
                     -Dsonar.java.binaries=target-classes/com/visualpathit/account/contllertest/ \
-                    -Dsonar.junit.reportPaths=target/surefire-reports/ '
+                    -Dsonar.junit.reportPaths=target/surefire-reports/ \
                     -Dsonar.jacoco.reportPaths=target/jacoco-ut.exec \
                     -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
                 }
