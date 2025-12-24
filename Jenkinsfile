@@ -22,7 +22,8 @@ pipeline {
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
     }
-
+}
+/*
     stages {
         stage('Build'){
             steps {
@@ -31,7 +32,7 @@ pipeline {
             post {
                 success {
                     echo "Now Archiving."
-                    archiveArtifacts artifacts: '**/*.war'
+                    archiveArtifacts artifacts: '**#/*.war'
                 }
             }
         }
@@ -108,3 +109,4 @@ pipeline {
         }
     }
 }
+*/
